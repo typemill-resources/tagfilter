@@ -1,0 +1,6 @@
+a.tag, a.tag:link, a.tag:visited{ text-decoration: none; display:inline-block; }
+.patags{padding: 2px; }
+.matags{margin: 2px; }
+@media screen and (min-width:50em){
+  .w-48-l.w-100{width: 48%;}
+}

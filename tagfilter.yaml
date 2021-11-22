@@ -1,0 +1,41 @@
+name: Tagfilter
+version: 1.0.0
+description: Add tags to your pages and create a filter-page to search articles with tags.
+author: Sebastian Schürmanns
+homepage: https://trendschau.net
+licence: MIT
+
+forms:
+  fields:
+
+    filterpage:
+      type: text
+      label: Path to filterpage
+      placeholder: '/mypage'
+      description: 'Please add a path to the page where the filter should appear.'
+    resultlabel:
+      type: text
+      label: Text for result
+      placeholder: 'Number of results'
+    customorder:
+      type: text
+      label: Order the categories
+      placeholder: 'FirstCategoryName,SecondCategoryName,ThirdCategoryName'
+      description: 'Add a comma separated list of your category names.'
+    cache:
+      type: checkbox
+      label: Cache
+      checkboxlabel: Cache the pagelist (activate when you finished your tag-editing to improve performance)
+
+metatabs:
+  tags:
+    fields:
+      tagfieldset:
+        type: fieldset
+        legend: Tags and Tag-Categories
+        fields:
+          tags:
+            type: customfields
+            label: Tags
+            description: Please add a main-category on the left side and a comma-separated list of tags on the right side. Tags will be clustered by the main-category on the filter-page.
+            data: array
