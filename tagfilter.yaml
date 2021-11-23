@@ -4,6 +4,8 @@ description: Add tags to your pages and create a filter-page to search articles 
 author: Sebastian Schürmanns
 homepage: https://trendschau.net
 licence: MIT
+paypal: https://paypal.me/typemill
+amount: 10
 
 forms:
   fields:
