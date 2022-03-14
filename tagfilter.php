@@ -100,8 +100,13 @@ class Tagfilter extends Plugin
 
 			# check if there are tags in the url
 			$params 	= $this->getParams();
-			$tag 		= isset($params['tag']) ? $params['tag'] : false; 
-			if( ( strlen($tag) > 50 ) OR ( $tag != strip_tags($tag) ))
+			$tag 		= isset($params['tag']) ? $params['tag'] : false;
+			if($tag)
+			{
+				$tag 	= urldecode($tag); 
+			}
+			
+			if( $tag && (( strlen($tag) > 50 ) OR ( $tag != strip_tags($tag) )) )
 			{ 
 				$tag = false; 
 			}
@@ -223,7 +228,7 @@ class Tagfilter extends Plugin
 					# do we need to show the category, too? 
 					foreach($category as $tag)
 					{
-						$tagMarkup .= '<a class="tag link black patags matags ba br1 b--black hover-white hover-bg-black pointer" href="' . $home . $filterpage . '?tag=' . $tag . '">' . $tag . '</a>';
+						$tagMarkup .= '<a class="tag link black patags matags ba br1 b--black hover-white hover-bg-black pointer" href="' . $home . $filterpage . '?tag=' . urlencode($tag) . '">' . $tag . '</a>';
 					}
 				}
 				$tagMarkup .= '</div>';
